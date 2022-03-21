@@ -1,0 +1,28 @@
+@import './sass/vars.module.scss';
+
+body {
+  width: 100vw !important;
+  height: 100vh !important;
+}
+#root,
+.app {
+  width: 100%;
+  height: 100vh;
+}
+.app {
+  display: grid;
+  grid-template-columns: 250px auto;
+  grid-template-rows: auto;
+  grid-template-areas: 'nav view';
+  overflow: auto;
+  transition: grid-template-columns 120ms ease;
+}
+.nav {
+  grid-area: 'nav';
+  background-color: $bg-primary-alt;
+  height: 100%;
+}
+.view {
+  grid-area: 'view';
+  overflow: auto;
+}
