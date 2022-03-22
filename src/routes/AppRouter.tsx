@@ -4,7 +4,7 @@ import {
 } from 'react-router-dom';
 import LatestPathMiddleware from '../middlewares/LatestPathMiddleware';
 import { useDispatch } from 'react-redux'
-import { setUser } from '../providers/User/actions';
+import { setUser } from '../reducers/User/actions';
 import UnprotectedRouter from './UnprotectedRouter';
 import ProtectedRouter from './ProtectedRouter';
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Routes, Route } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
-import { setUser } from '../providers/User/actions';
+import { setUser } from '../reducers/User/actions';
 
 interface IProps { }
 
