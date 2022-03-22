@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux';
-import { UserState } from '../providers/User/reducer';
+import { UserState } from '../reducers/User/reducer';
+import { IAppState } from '../store';
 
 export const useAuth = () => {
-  return useSelector<UserState, UserState>((state) => state);
+  return useSelector<IAppState, UserState>(state => state.user);
 };
