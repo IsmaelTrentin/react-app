@@ -12,6 +12,14 @@
 
 ## Changelog
 
+### `0.0.2`
+
+- Updated Redux structure
+  - User reducers
+  - GobalModal reducers
+- Added some basic components
+- Fully implemented global modal
+
 ### `0.0.1`
 
 - Bootstrapped project with CRA ts
