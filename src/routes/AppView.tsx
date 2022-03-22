@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Nav from '../components/Nav';
 import { useAuth } from '../hooks/useAuth';
 import appStyles from '../app.module.scss';
+import Home from './Home';
 
 interface IProps { }
 
@@ -22,7 +23,7 @@ const AppView: React.FC<IProps> = () => {
         <Routes>
           <Route
             path="/"
-            element={<div>user data: <pre>{JSON.stringify(user, null, 2)}</pre></div>}
+            element={<Home />}
           />
           <Route
             path="/test"
