@@ -1,10 +1,10 @@
 import React from 'react';
 import { Route, Routes } from 'react-router';
 import { useAuth } from '../hooks/useAuth';
-import AppView from './AppView';
+import AppView from './AppRouter';
 
 const ProtectedRouter = () => {
-  const user = useAuth();
+  const { data: user } = useAuth();
 
   return (
     <>

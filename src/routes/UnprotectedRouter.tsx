@@ -1,21 +1,16 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
 import { Routes, Route } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
-import { setUser } from '../reducers/User/actions';
+import { SESH_KEY } from '../util/local.storage.keys';
 
 interface IProps { }
 
 const UnprotectedRouter: React.FC<IProps> = () => {
-  const user = useAuth();
-  const dispatch = useDispatch();
+  const { data: user, refetch } = useAuth();
   const onLogin = () => {
-    // TODO: Fetch user data
-    const mockFetch = {
-      name: 'test_user'
-    };
-    dispatch(setUser(mockFetch));
-    localStorage.setItem('sid', '1');
+    // TODO: authorize and get sesh id
+    localStorage.setItem(SESH_KEY, '1');
+    refetch();
   };
 
   return (
