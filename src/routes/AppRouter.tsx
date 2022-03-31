@@ -1,34 +1,46 @@
-import React, { useEffect } from 'react';
-import {
-  BrowserRouter as Router,
-} from 'react-router-dom';
-import LatestPathMiddleware from '../middlewares/LatestPathMiddleware';
-import { useDispatch } from 'react-redux'
-import { setUser } from '../reducers/User/actions';
-import UnprotectedRouter from './UnprotectedRouter';
-import ProtectedRouter from './ProtectedRouter';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Nav from '../components/Nav';
+import { useAuth } from '../hooks/useAuth';
+import appStyles from './../components/app.module.scss';
+import Home from '../views/Home';
 
 interface IProps { }
 
-const AppRouter: React.FC<IProps> = () => {
-  const dispatch = useDispatch();
+const AppView: React.FC<IProps> = () => {
+  const { data: user, isLoading } = useAuth();
 
-  useEffect(() => {
-    // TODO: Fetch persistent user session data
-    if (localStorage.getItem('sid')) {
-      dispatch(setUser({
-        name: 'test_user'
-      }));
-    }
-  }, [dispatch]);
+  if (!user && isLoading) {
+    return null;
+  }
+
+  if (!user) {
+    return <h1>error</h1>;
+  }
 
   return (
-    <Router>
-      <LatestPathMiddleware />
-      <UnprotectedRouter />
-      <ProtectedRouter />
-    </Router>
+    <>
+      <div className={appStyles.nav}>
+        <Nav />
+      </div>
+      <div className={appStyles.view}>
+        <Routes>
+          <Route
+            path="/"
+            element={<Home />}
+          />
+          <Route
+            path="/test"
+            element={<div>Test route</div>}
+          />
+          <Route
+            path="*"
+            element={<h1>404</h1>}
+          />
+        </Routes>
+      </div>
+    </>
   );
 };
 
-export default AppRouter;
+export default AppView;
