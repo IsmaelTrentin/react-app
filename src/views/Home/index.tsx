@@ -7,11 +7,11 @@ import styles from './index.module.scss';
 interface IProps { }
 
 const Home: React.FC<IProps> = () => {
-  const user = useAuth();
+  const { data: user } = useAuth();
   const dispatch = useDispatch();
   const handleShowModal = () => {
     dispatch(
-      setGlobalModalChildren(<h1>TEST MODAL GO</h1>)
+      setGlobalModalChildren(<h1>username: {user ? user.name : 'loading...'}</h1>)
     );
     dispatch(
       showGlobalModal()
