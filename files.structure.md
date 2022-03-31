@@ -36,7 +36,7 @@ A reducer must be in a folder with its `name` containing `actions.ts` and `reduc
 
 ### `src/util`
 
-Filenames words must be separated with **.**. No camel case or other.
+Filenames words must be separated with `.`. No camel case or other.
 Example: `local.storage.keys.ts`
 
 ### `src/views`
