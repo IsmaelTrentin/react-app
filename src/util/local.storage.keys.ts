@@ -1,0 +1,1 @@
+export const SESH_KEY = 'sessionId';
