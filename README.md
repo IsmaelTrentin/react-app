@@ -13,7 +13,7 @@
 
 ## Changelog
 
-### `0.0.2`
+### `0.0.3`
 
 - Switched user state from `redux` to `react-query`
 - Updated [files structure](./files.structure.md)
