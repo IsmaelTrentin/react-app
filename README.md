@@ -6,11 +6,17 @@
 - redux
 - react-router-dom v6
 - react-query
+- axios
 - sass
 - react-transition-group
 - classnames
 
 ## Changelog
+
+### `0.0.2`
+
+- Switched user state from `redux` to `react-query`
+- Updated [files structure](./files.structure.md)
 
 ### `0.0.2`
 
