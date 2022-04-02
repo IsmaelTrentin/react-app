@@ -4,7 +4,7 @@
 
 ### Components
 
-Every component must be in a folder with its `name` containing `index.tsx` and `index.module.scss`. For logical operations a file named `index.logic.ts[x]` may be added. They must be exported as default.
+Every component must be in a folder with its `name` containing `index.tsx` and `styles.ts`. For logical operations a file named `index.logic.ts[x]` may be added. They must be exported as default.
 
 ### Hooks
 
