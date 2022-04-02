@@ -1,6 +1,6 @@
 import React from 'react';
 import cx from 'classnames';
-import styles from './index.module.scss';
+import useStyles from './styles';
 import { createPortal } from 'react-dom';
 import { CSSTransition } from 'react-transition-group';
 import { useRef } from 'react';
@@ -22,6 +22,7 @@ const Modal: React.FC<IModalProps> = props => {
     onClose
   } = props;
   const { ref, close } = Logic(visible, onClose);
+  const { classes } = useStyles();
   const nodeRef = useRef<HTMLDivElement>(null);
 
   return createPortal(
@@ -29,21 +30,21 @@ const Modal: React.FC<IModalProps> = props => {
       timeout={300}
       unmountOnExit
       classNames={{
-        enter: cx(styles['bg-enter'], styles['modal-enter']),
-        enterActive: cx(styles['bg-enter-active'], styles['modal-enter-active']),
-        exit: cx(styles['bg-exit'], styles['modal-exit']),
-        exitActive: cx(styles['bg-exit-active'], styles['modal-exit-active'])
+        enter: classes['bg-enter'],
+        enterActive: classes['bg-enter-active'],
+        exit: classes['bg-exit'],
+        exitActive: classes['bg-exit-active']
       }}
       in={visible}
       onExited={onClose}
       nodeRef={nodeRef}>
       <div
-        className={styles.bg}
+        className={classes.bg}
         ref={nodeRef}>
         {children &&
-          <div className={styles.wrapper}>
-            <div ref={ref} className={!noContainer ? styles.modal : styles['modal-no-container']}>
-              <div className={styles.x}>
+          <div className={classes.wrapper}>
+            <div ref={ref} className={!noContainer ? classes.modal : classes['modal-no-container']}>
+              <div className={classes.x}>
                 <X onClick={close} />
               </div>
               {children}

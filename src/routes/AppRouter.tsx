@@ -2,13 +2,14 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Nav from '../components/Nav';
 import { useAuth } from '../hooks/useAuth';
-import appStyles from './../components/app.module.scss';
+// import appStyles from './../components/app.module.scss';
 import Home from '../views/Home';
 
 interface IProps { }
 
 const AppView: React.FC<IProps> = () => {
   const { data: user, isLoading } = useAuth();
+  const classes = { view: '' };
 
   if (!user && isLoading) {
     return null;
@@ -20,10 +21,10 @@ const AppView: React.FC<IProps> = () => {
 
   return (
     <>
-      <div className={appStyles.nav}>
+      <div>
         <Nav />
       </div>
-      <div className={appStyles.view}>
+      <div className={classes.view}>
         <Routes>
           <Route
             path="/"

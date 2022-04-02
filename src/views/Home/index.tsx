@@ -1,8 +1,8 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import Button from '../../components/Button';
 import { useAuth } from '../../hooks/useAuth';
 import { setGlobalModalChildren, showGlobalModal } from '../../reducers/GlobalModal/actions';
-import styles from './index.module.scss';
 
 interface IProps { }
 
@@ -19,13 +19,13 @@ const Home: React.FC<IProps> = () => {
   };
 
   return (
-    <div className={styles.main}>
+    <div>
       <div>user data: <pre>{JSON.stringify(user, null, 2)}</pre></div>
-      <button
+      <Button
         onClick={handleShowModal}
       >
         show test modal
-      </button>
+      </Button>
     </div>
   );
 };

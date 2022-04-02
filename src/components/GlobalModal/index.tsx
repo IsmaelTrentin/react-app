@@ -6,7 +6,7 @@ import Modal from '../Modal';
 
 interface IProps { }
 
-const GlobalModal: React.FC<IProps> = props => {
+const GlobalModal: React.FC<IProps> = () => {
   const {
     visible,
     withContainer,
