@@ -9,7 +9,7 @@ export const noselect: CSSObject = {
   userSelect: 'none'
 }
 export const view: CSSObject = {
-  padding: '2.5 rem',
+  padding: '2.5rem',
   opacity: 0,
   animation: 'opacity-in 350ms ease forwards'
 }
