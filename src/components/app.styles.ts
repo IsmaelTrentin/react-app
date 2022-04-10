@@ -5,7 +5,7 @@ const styles = createStyles((theme) => ({
     display: 'grid',
     gridTemplateColumns: '250px auto',
     gridTemplateRows: 'auto',
-    gridTemplateAreas: 'nav view',
+    gridTemplateAreas: "'nav view'",
     width: '100%',
     height: '100vh',
     transition: 'grid-template-columns 120ms'
