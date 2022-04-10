@@ -45,13 +45,18 @@ const darkTheme: MantineThemeOverride = {
     bgColors: {
       primary: '#25262a',
       primaryAlt: '#202225',
-      bgSecondary: '#2f3136',
-      bgSecondaryAlt: '#3c3f44'
+      secondary: '#2f3136',
+      secondaryAlt: '#3c3f44'
     },
     textColors: {
       primary: '#73767b',
       alt: '#4a4c51',
       highlight: '#ffffff'
+    },
+    shadows: {
+      default: '5px 5px 0 0 #7800ffff, 10px 10px 0 0 #00000022',
+      hover: '8px 8px 0 0 #7800ffff, 16px 16px 0 0 #00000022',
+      active: '11px 11px 0 0 #7800ffff, 22px 22px 0 0 #00000011'
     },
     shadowHover: '0 2px 11px 0 #00000069',
     outline: {

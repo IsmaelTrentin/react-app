@@ -1,14 +1,16 @@
 import { MantineThemeOverride } from '@mantine/core';
 
+// const primary = '#09d684';
+const primary = '#7800ff'; //#09d684 #0088ff
 const whiteTheme: MantineThemeOverride = {
   colorScheme: 'light',
   focusRing: 'auto',
   defaultRadius: 3,
   colors: {
-    primary: ['#7800ff', '#7800ff', '#7800ff', '#7800ff', '#7800ff', '#7800ff', '#7800ff', '#7800ff', '#7800ff', '#7800ff',],
+    primary: [primary, primary, primary, primary, primary, primary, primary, primary, primary, primary,],
     red: ['#ff2a4e', '#ff2a4e', '#ff2a4e', '#ff2a4e', '#ff2a4e', '#ff2a4e', '#ff2a4e', '#ff2a4e', '#ff2a4e', '#ff2a4e']
   },
-  primaryColor: 'violet',
+  primaryColor: 'primary',
   fontFamily: 'Circular Std',
   fontSizes: {
     xs: 12,
@@ -44,16 +46,21 @@ const whiteTheme: MantineThemeOverride = {
   other: {
     bgColors: {
       primary: '#ffffff',
-      primaryAlt: '#f2f2f2',
-      bgSecondary: '#f00',
-      bgSecondaryAlt: '#0f0'
+      primaryAlt: '#f1f1f1',
+      secondary: '#f9f9f9',
+      secondaryAlt: '#eaeaea'
     },
     textColors: {
       primary: '#4a4c51',
       alt: '#73767b',
-      highlight: '#7800ff'//'#000000'
+      highlight: primary//'#000000'
     },
-    shadowHover: '0 2px 11px 0 #00000069',
+    shadows: {
+      default: `5px 5px 0 0 ${primary}ff, 10px 10px 0 0 #00000006`,
+      hover: `8px 8px 0 0 ${primary}ff, 16px 16px 0 0 #00000006`,
+      active: `11px 11px 0 0 ${primary}ff, 22px 22px 0 0 #00000006`
+    },
+    shadowHover: '5px 5px 0 0 #7800ffff, 10px 10px 0 0 #00000033, 15px 15px 0 0 #00000011',
     outline: {
       dark: '#1d1f22'
     }
