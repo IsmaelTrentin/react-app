@@ -8,6 +8,7 @@ import { MantineProvider } from '@mantine/core';
 import darkTheme from './themes/dark';
 import whiteTheme from './themes/white';
 import GlobalStyles from './GlobalStyles';
+import './sass/animations.scss';
 
 ReactDOM.render(
   <React.StrictMode>
