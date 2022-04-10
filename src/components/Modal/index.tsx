@@ -1,5 +1,4 @@
 import React from 'react';
-import cx from 'classnames';
 import useStyles from './styles';
 import { createPortal } from 'react-dom';
 import { CSSTransition } from 'react-transition-group';
