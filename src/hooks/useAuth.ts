@@ -1,24 +1,32 @@
 import { useQuery } from 'react-query';
 import { IResponseError, IUser } from '../@types';
-import { SESH_KEY } from '../util/local.storage.keys';
+import { ACCESS_TOKEN } from '../util/local.storage.keys';
 import { QK_USER } from '../util/query.keys';
 import axios from './../services/Axios';
+import UserService from './../services/user';
+import jwtd from 'jwt-decode';
 
 const isDev = process.env.REACT_APP_DEV;
-
 const fetchUser = async () => {
-  const seshId = localStorage.getItem(SESH_KEY);
-  if (!seshId) {
+  const at = localStorage.getItem(ACCESS_TOKEN);
+  if (!at) {
     return undefined;
   }
-  if (!isDev) {
+  if (isDev) {
     const testData: IUser = {
       name: 'test user'
     }
     return testData;
   }
-  const { data } = await axios.get(`/sesh/${seshId}`);
-  return data.user;
+  try {
+    const { _id } = jwtd<{ _id: string }>(at);
+    axios.defaults.headers.common['Authorization'] = `Bearer ${at}`;
+    const user = await UserService.getUser(_id);
+    return user;
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
 };
 
 export const useAuth = () => {
